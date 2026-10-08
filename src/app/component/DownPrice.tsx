@@ -11,7 +11,7 @@ interface itemApi {
   };
 }
 
-const Price = async () => {
+const DownPrice = async () => {
   const res = await fetch(
     "https://api.api-store.workers.dev/api/bazardor/products",
     {
@@ -21,9 +21,9 @@ const Price = async () => {
   const data: itemApi[] = await res.json();
 
   return (
-    <section className="bg-green-100 pt-10">
+    <section className="bg-green-100 pt-15">
       <div className="container mx-auto">
-        <div className="font-bold text-2xl pb-5"><span className="text-red-600">▲</span> আজ দাম বেড়েছে</div>
+        <div className="font-bold text-2xl pb-5"><span className="text-green-600">▲</span> আজ দাম কমেছে</div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {data
             .filter((u) => u.change.dir === "up")
@@ -75,4 +75,4 @@ const Price = async () => {
   );
 };
 
-export default Price;
+export default DownPrice;
