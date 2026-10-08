@@ -23,10 +23,10 @@ const DownPrice = async () => {
   return (
     <section className="bg-green-100 pt-15">
       <div className="container mx-auto">
-        <div className="font-bold text-2xl pb-5"><span className="text-green-600">▲</span> আজ দাম কমেছে</div>
+        <div className="font-bold text-2xl pb-5"><span className="text-green-600">▼</span> আজ দাম কমেছে</div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {data
-            .filter((u) => u.change.dir === "up")
+            .filter((u) => u.change.dir === "down")
             .map((i) => (
               <div
                 key={i.id}
@@ -61,8 +61,8 @@ const DownPrice = async () => {
                   </div>
 
                   {/* Percentage */}
-                  <div className="bg-green-50 text-red-500 px-3 py-1.5 rounded-full text-sm font-semibold">
-                    ▲ {i.change.pct}%
+                  <div className="bg-green-50 text-green-500 px-3 py-1.5 rounded-full text-sm font-semibold">
+                    ▼ {Math.abs(i.change.pct)}%
                   </div>
                 </div>
               </div>

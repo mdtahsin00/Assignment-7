@@ -1,4 +1,5 @@
 
+import AllProduct from './component/AllProduct';
 import DownPrice from './component/DownPrice';
 import Hero from './component/Hero';
 import Price from './component/Price';
@@ -9,6 +10,7 @@ const page = () => {
     <Hero></Hero>
     <Price></Price>
     <DownPrice></DownPrice>
+    <AllProduct></AllProduct>
     </>
   );
 };
