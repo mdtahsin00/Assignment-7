@@ -1,6 +1,6 @@
 import Image from "next/image";
 import NavigationLink from "./NavigationLink";
-import Marquee from "./Marquee";
+// import Marquee from "./Marquee";
 import MarqueeItems from "./Marquee";
 
 const Navbar = () => {
@@ -23,8 +23,8 @@ const Navbar = () => {
         </div>
       </div>
       <div className="flex gap-5">
-        <div className="bg-blue-600 rounded-2xl text-white px-2 py-3"><button className="btn btn-primary">Sign-Up</button></div>
-        <div className="bg-green-600 rounded-2xl text-white px-2 py-3"><button className="btn btn-success">Sign-In</button></div>
+        <div><button className="btn btn-primary">Sign-Up</button></div>
+        <div><button className="btn btn-success">Sign-In</button></div>
        
       </div>
     </section>
