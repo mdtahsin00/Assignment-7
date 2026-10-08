@@ -20,7 +20,7 @@ const Marqueeitems = async () => {
   );
   const data: MarqueeLink[] = await res.json();
   return (
-    <Marquee>
+    <Marquee speed={200}>
       <div className="flex gap-10 p-5 text-[20px]">
         {data.map((l) => (
           <span key={l.id} className="flex items-center gap-2 border-y border-gray-200 px-4 py-2">

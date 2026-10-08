@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_Bengali } from "next/font/google";
 import "./globals.css";
 import Navbar from "./component/Navbar";
+import Footer from "./component/Footer";
 
 const NotoSansBangali = Noto_Sans_Bengali({
   subsets: ["latin", "bengali"],
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
          <Navbar/>
         
         {children}
+        <Footer/>
         </body>
     </html>
   );
