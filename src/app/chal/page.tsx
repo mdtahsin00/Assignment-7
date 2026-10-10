@@ -1,3 +1,5 @@
+import { toBanglaNumber } from "../utils/number";
+
 interface Chal {
   id: number;
   nameBn: string;
@@ -61,7 +63,7 @@ const page = async() => {
                   <p className="text-sm text-gray-600">আজকের দাম</p>
 
                   <p className="text-xl font-bold text-gray-800">
-                    {i.today} টাকা
+                    {toBanglaNumber(i.today)} টাকা
                   </p>
                 </div>
 
@@ -72,7 +74,7 @@ const page = async() => {
                     i.change.dir === "up" ? "text-red-400" : "text-green-400"
                   }
                 >
-                  {i.change.dir === "up" ? "▲" : "▼"} {Math.abs(i.change.pct)}%
+                  {i.change.dir === "up" ? "▲" : "▼"} {toBanglaNumber(Math.abs(i.change.pct))}%
                 </span>
                 </div>
                 
