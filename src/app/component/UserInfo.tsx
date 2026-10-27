@@ -58,12 +58,12 @@ const UserInfo = () => {
         <div className="flex gap-5">
           <div>
             <Link href="/sign-up">
-              <button className="btn btn-primary">Sign-Up</button>
+              <button className="btn btn-primary">সাইন আপ</button>
             </Link>
           </div>
           <div>
             <Link href="/sign-in">
-              <button className="btn btn-success">Sign-In</button>
+              <button className="btn btn-success">সাইন ইন</button>
             </Link>
           </div>
         </div>
