@@ -1,6 +1,10 @@
+import ProductCardLink from "./ProductCardLink";
+import { toBanglaNumber } from "../utils/number";
+
 interface itemApi {
   id: number;
   nameBn: string;
+  category: string;
   unit: string;
   image: string;
   today: number;
@@ -29,8 +33,9 @@ const AllProduct = async () => {
         <div className="pb-5">মোট ৩৩টি পণ্য দেখানো হচ্ছে</div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {data.map((i) => (
-            <div
+            <ProductCardLink
               key={i.id}
+              href={`/${i.category}/${i.id}`}
               className="bg-white border border-gray-200 rounded-2xl p-4 shadow-sm"
             >
               {/* Top Section */}
@@ -68,12 +73,12 @@ const AllProduct = async () => {
                     i.change.dir === "up" ? "text-red-400" : "text-green-400"
                   }
                 >
-                  {i.change.dir === "up" ? "▲" : "▼"} {Math.abs(i.change.pct)}%
+                  {i.change.dir === "up" ? "▲" : "▼"} {toBanglaNumber(Math.abs(i.change.pct))}%
                 </span>
                 </div>
                 
               </div>
-            </div>
+            </ProductCardLink>
           ))}
         </div>
       </div>

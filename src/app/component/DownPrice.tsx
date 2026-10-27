@@ -1,6 +1,10 @@
+import ProductCardLink from "./ProductCardLink";
+import { toBanglaNumber } from "../utils/number";
+
 interface itemApi {
   id: number;
   nameBn: string;
+  category: string;
   unit: string;
   image: string;
   today: number;
@@ -28,8 +32,9 @@ const DownPrice = async () => {
           {data
             .filter((u) => u.change.dir === "down")
             .map((i) => (
-              <div
+              <ProductCardLink
                 key={i.id}
+                href={`/${i.category}/${i.id}`}
                 className="bg-white border border-gray-200 rounded-2xl p-4 shadow-sm"
               >
                 {/* Top Section */}
@@ -56,16 +61,16 @@ const DownPrice = async () => {
                     <p className="text-sm text-gray-600">আজকের দাম</p>
 
                     <p className="text-xl font-bold text-gray-800">
-                      {i.today} টাকা
+                      {toBanglaNumber(i.today)} টাকা
                     </p>
                   </div>
 
                   {/* Percentage */}
                   <div className="bg-green-50 text-green-500 px-3 py-1.5 rounded-full text-sm font-semibold">
-                    ▼ {Math.abs(i.change.pct)}%
+                    ▼ {toBanglaNumber(Math.abs(i.change.pct))}%
                   </div>
                 </div>
-              </div>
+              </ProductCardLink>
             ))}
         </div>
       </div>

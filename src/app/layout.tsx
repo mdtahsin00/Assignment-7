@@ -3,6 +3,7 @@ import { Noto_Sans_Bengali } from "next/font/google";
 import "./globals.css";
 import Navbar from "./component/Navbar";
 import Footer from "./component/Footer";
+import { Toaster } from "react-hot-toast";
 
 const NotoSansBangali = Noto_Sans_Bengali({
   subsets: ["latin", "bengali"],
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         
         {children}
         <Footer/>
+        <Toaster/>
         </body>
     </html>
   );

@@ -3,6 +3,7 @@ import NavigationLink from "./NavigationLink";
 // import Marquee from "./Marquee";
 import MarqueeItems from "./Marquee";
 import Link from "next/link";
+import UserInfo from "./UserInfo";
 
 const Navbar = () => {
   return (
@@ -26,14 +27,8 @@ const Navbar = () => {
               <p>মঙ্গলবার, ৬ অক্টোবর, ২০২৬</p>
             </div>
           </div>
-          <div className="flex gap-5">
-            <div>
-              <button className="btn btn-primary">Sign-Up</button>
-            </div>
-            <div>
-              <button className="btn btn-success">Sign-In</button>
-            </div>
-          </div>
+         
+         <UserInfo></UserInfo>
         </section>
         <div className=""></div>
       </div>
